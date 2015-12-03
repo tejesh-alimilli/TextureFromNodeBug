@@ -43,6 +43,9 @@ class GameScene: SKScene {
     
     func updatePreview(showAt: CGPoint) {
         let rootNodePoint = convertPoint(showAt, toNode: rootNode)
+        //
+        // the below code doesn't work, use view?.textureFromNode(rootNode) and it works
+        //
         if let previewTexture = view?.textureFromNode(rootNode, crop: CGRect(origin: rootNodePoint, size: CGSize(width: 100, height: 100))) {
             previewNode.texture = previewTexture
             previewNode.position = showAt
